@@ -1,0 +1,22 @@
+enable
+configure terminal
+hostname R-ISP
+no ip domain-lookup
+interface GigabitEthernet0/0
+ description ENLACE EMPRESA
+ ip address 201.1.1.1 255.255.255.252
+ no shutdown
+ exit
+interface GigabitEthernet0/1
+ description NUVEM SERVIDOR WEB
+ ip address 193.10.10.254 255.255.255.0
+ no shutdown
+ exit
+router rip
+ version 2
+ network 201.1.1.0
+ network 193.10.10.0
+ passive-interface GigabitEthernet0/1
+ no auto-summary
+ end
+write memory

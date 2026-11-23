@@ -1,0 +1,26 @@
+enable
+configure terminal
+hostname R-EMPRESA
+no ip domain-lookup
+interface GigabitEthernet0/0
+ description LAN EMPRESA
+ ip address 192.168.10.1 255.255.255.0
+ ip nat inside
+ no shutdown
+ exit
+interface GigabitEthernet0/1
+ description WAN PROVEDOR
+ ip address 201.1.1.2 255.255.255.252
+ ip nat outside
+ no shutdown
+ exit
+router rip
+ version 2
+ network 201.1.1.0
+ passive-interface GigabitEthernet0/0
+ no auto-summary
+ exit
+access-list 1 permit 192.168.10.0 0.0.0.255
+ip nat inside source list 1 interface GigabitEthernet0/1 overload
+end
+write memory

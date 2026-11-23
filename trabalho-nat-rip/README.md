@@ -1,7 +1,7 @@
 # Rede local privada com NAT e RIP — Cisco Packet Tracer
 
 📄 **Relatório com as respostas (itens a–d):** [`relatorio.pdf`](relatorio.pdf)
-🖧 **Arquivo do Packet Tracer:** [`topologia_nat_rip.pkt`](topologia_nat_rip.pkt)
+🖧 **Arquivo do Packet Tracer:** [`topologia_nat_rip.pkt`](topologia_nat_rip.pkt)  (requer PT 9.0.1+; para PT 8.x veja [MONTAR-NO-PT-8.md](MONTAR-NO-PT-8.md))
 
 ![Topologia](prints/topologia.png)
 
@@ -21,3 +21,5 @@
 | `cli/` | Saídas reais da CLI: configuração, `show ip route`, `show ip protocols`, `show ip nat translations` |
 | `prints/topologia.png` | Captura do canvas com IPs e interfaces |
 | `plan.json` | Descrição estruturada da topologia |
+| `configs-para-colar/` | Configs dos roteadores prontas para colar na CLI |
+| [`MONTAR-NO-PT-8.md`](MONTAR-NO-PT-8.md) | Como abrir/remontar em Packet Tracer 8.x |
