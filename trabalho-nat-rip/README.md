@@ -1,6 +1,6 @@
 # Rede local privada com NAT e RIP — Cisco Packet Tracer
 
-📄 **Relatório com as respostas (itens a–d):** [`relatorio.pdf`](relatorio.pdf)
+📄 **Relatório com as respostas (itens a–d):** [`relatorio.pdf`](relatorio.pdf) · [`relatorio.docx`](relatorio.docx) (Word)
 🖧 **Arquivo do Packet Tracer:** [`topologia_nat_rip.pkt`](topologia_nat_rip.pkt)  (cabeçalho marcado como versão 8.2.2, para abrir no PT 8.2.2; se der erro, veja [MONTAR-NO-PT-8.md](MONTAR-NO-PT-8.md))
 
 ![Topologia](prints/topologia.png)
@@ -17,6 +17,7 @@
 | Arquivo | O que é |
 |---|---|
 | `relatorio.pdf` | Documento único com os itens a, b, c e d |
+| `relatorio.docx` | O mesmo relatório em Word (editável) |
 | `topologia_nat_rip.pkt` | Topologia configurada, versão 8.2.2 no cabeçalho |
 | `topologia_nat_rip_pt9-original.pkt` | Arquivo original salvo pelo PT 9.0.1 |
 | `cli/` | Saídas reais da CLI: configuração, `show ip route`, `show ip protocols`, `show ip nat translations` |
