@@ -1,0 +1,16 @@
+{"name":"nat-rip","devices":[
+{"name":"PC1","model":"PC-PT","category":"pc","role":"end_host","x":60,"y":150,"interfaces":{"FastEthernet0":"192.168.10.11/24"},"gateway":"192.168.10.1"},
+{"name":"PC2","model":"PC-PT","category":"pc","role":"end_host","x":60,"y":300,"interfaces":{"FastEthernet0":"192.168.10.12/24"},"gateway":"192.168.10.1"},
+{"name":"PC3","model":"PC-PT","category":"pc","role":"end_host","x":60,"y":450,"interfaces":{"FastEthernet0":"192.168.10.13/24"},"gateway":"192.168.10.1"},
+{"name":"SW-EMPRESA","model":"2960-24TT","category":"switch","role":"access_switch","x":230,"y":300,"interfaces":{}},
+{"name":"R-EMPRESA","model":"2911","category":"router","role":"edge_router","x":420,"y":300,"interfaces":{}},
+{"name":"R-ISP","model":"2911","category":"router","role":"edge_router","x":610,"y":300,"interfaces":{}},
+{"name":"SERVIDOR-WEB","model":"Server-PT","category":"server","role":"server_host","x":800,"y":300,"interfaces":{"FastEthernet0":"193.10.10.1/24"},"gateway":"193.10.10.254"}
+],"modules":[],"links":[
+{"device_a":"PC1","port_a":"FastEthernet0","device_b":"SW-EMPRESA","port_b":"FastEthernet0/1","cable":"straight"},
+{"device_a":"PC2","port_a":"FastEthernet0","device_b":"SW-EMPRESA","port_b":"FastEthernet0/2","cable":"straight"},
+{"device_a":"PC3","port_a":"FastEthernet0","device_b":"SW-EMPRESA","port_b":"FastEthernet0/3","cable":"straight"},
+{"device_a":"SW-EMPRESA","port_a":"GigabitEthernet0/1","device_b":"R-EMPRESA","port_b":"GigabitEthernet0/0","cable":"straight"},
+{"device_a":"R-EMPRESA","port_a":"GigabitEthernet0/1","device_b":"R-ISP","port_b":"GigabitEthernet0/0","cable":"cross"},
+{"device_a":"R-ISP","port_a":"GigabitEthernet0/1","device_b":"SERVIDOR-WEB","port_b":"FastEthernet0","cable":"cross"}
+],"dhcp_pools":[],"static_routes":[],"ospf_configs":[],"rip_configs":[],"eigrp_configs":[],"vlans":[],"access_ports":[],"trunks":[],"subinterfaces":[],"validations":[],"extra_cli":{}}

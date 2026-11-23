@@ -1,0 +1,29 @@
+R-EMPRESA>enable
+R-EMPRESA#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R-EMPRESA(config)#hostname R-EMPRESA
+R-EMPRESA(config)#no ip domain-lookup
+R-EMPRESA(config)#interface GigabitEthernet0/0
+R-EMPRESA(config-if)#description LAN EMPRESA
+R-EMPRESA(config-if)#ip address 192.168.10.1 255.255.255.0
+R-EMPRESA(config-if)#ip nat inside
+R-EMPRESA(config-if)#no shutdown
+R-EMPRESA(config-if)#exit
+R-EMPRESA(config)#interface GigabitEthernet0/1
+R-EMPRESA(config-if)#description WAN PROVEDOR
+R-EMPRESA(config-if)#ip address 201.1.1.2 255.255.255.252
+R-EMPRESA(config-if)#ip nat outside
+R-EMPRESA(config-if)#no shutdown
+R-EMPRESA(config-if)#exit
+R-EMPRESA(config)#router rip
+R-EMPRESA(config-router)#version 2
+R-EMPRESA(config-router)#network 201.1.1.0
+R-EMPRESA(config-router)#passive-interface GigabitEthernet0/0
+R-EMPRESA(config-router)#no auto-summary
+R-EMPRESA(config-router)#exit
+R-EMPRESA(config)#access-list 1 permit 192.168.10.0 0.0.0.255
+R-EMPRESA(config)#ip nat inside source list 1 interface GigabitEthernet0/1 overload
+R-EMPRESA(config)#end
+R-EMPRESA#write memory
+Building configuration...
+[OK]

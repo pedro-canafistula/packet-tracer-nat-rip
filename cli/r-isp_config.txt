@@ -1,0 +1,25 @@
+R-ISP>enable
+R-ISP#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R-ISP(config)#hostname R-ISP
+R-ISP(config)#no ip domain-lookup
+R-ISP(config)#interface GigabitEthernet0/0
+R-ISP(config-if)#description ENLACE EMPRESA
+R-ISP(config-if)#ip address 201.1.1.1 255.255.255.252
+R-ISP(config-if)#no shutdown
+R-ISP(config-if)#exit
+R-ISP(config)#interface GigabitEthernet0/1
+R-ISP(config-if)#description NUVEM SERVIDOR WEB
+R-ISP(config-if)#ip address 193.10.10.254 255.255.255.0
+R-ISP(config-if)#no shutdown
+R-ISP(config-if)#exit
+R-ISP(config)#router rip
+R-ISP(config-router)#version 2
+R-ISP(config-router)#network 201.1.1.0
+R-ISP(config-router)#network 193.10.10.0
+R-ISP(config-router)#passive-interface GigabitEthernet0/1
+R-ISP(config-router)#no auto-summary
+R-ISP(config-router)#end
+R-ISP#write memory
+Building configuration...
+[OK]
